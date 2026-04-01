@@ -44,15 +44,15 @@ const Steps = () => {
             return (
               <div
                 key={index}
-                className="relative bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300"
+                className="relative bg-white  rounded-2xl shadow-lg py-20 px-5 text-center hover:shadow-xl  "
               >
-                <div className="font-bold bg-linear-to-r from-[#4f39f6] to-purple-700 text-white mb-4 absolute top-0 right-0 h-10 w-10 flex items-center justify-center rounded-full m-1.5">
+                <div className="font-bold bg-linear-to-r from-[#4f39f6] to-purple-700 text-white mb-4 absolute top-0 right-0 h-10 w-10 flex items-center justify-center rounded-full m-4">
                   {step.number}
                 </div>
-                <div className="flex justify-center mb-4">
+                <div className="flex justify-center mb-4 bg-gray-100 h-30 w-30 m-auto items-center  rounded-full">
                   <img
                     src={step.icon}
-                    alt={step.title}
+                    alt=""
                     className="h-16 w-16 object-contain"
                   />
                 </div>
