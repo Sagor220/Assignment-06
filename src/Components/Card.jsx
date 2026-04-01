@@ -1,34 +1,6 @@
 import React from "react";
 import { MdDone } from "react-icons/md";
 
-// description
-// :
-// "Create professional resumes with AI-powered suggestions and ATS optimization."
-// features
-// :
-// (4) ['100+ templates', 'ATS optimization', 'Export to PDF', 'Cover letter builder']
-// icon
-// :
-// "📄"
-// id
-// :
-// 1
-// name
-// :
-// "Resume Builder Pro"
-// period
-// :
-// "one-time"
-// price
-// :
-// 49.99
-// tag
-// :
-// "Best Seller"
-// tagType
-// :
-// "best-seller"
-
 const Card = ({ card }) => {
   const { name, description, features, price, icon, period, tag } = card;
   return (
