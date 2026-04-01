@@ -8,6 +8,7 @@ import ProductsSection from "./Components/ProductsSection";
 import Stats from "./Components/Stats";
 import Steps from "./Components/Steps";
 import Pricing from "./Components/Pricing";
+import OptFooter from "./Components/OptFooter";
 
 const fetchProducts = async () => {
   const res = await fetch("./data/products.json");
@@ -30,7 +31,7 @@ function App() {
       </Suspense>
       <Steps />
       <Pricing />
-
+      <OptFooter />
       <Footer />
     </>
   );
