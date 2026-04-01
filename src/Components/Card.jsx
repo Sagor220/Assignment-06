@@ -30,14 +30,14 @@ import { MdDone } from "react-icons/md";
 // "best-seller"
 
 const Card = ({ card }) => {
-  const { name, description, features, price, icon, period } = card;
+  const { name, description, features, price, icon, period, tag } = card;
   return (
     <div>
-      <div className="card w-96 bg-base-100 shadow-sm">
-        <div className="card-body">
+      <div className="card bg-base-100 shadow-sm ">
+        <div className="card-body ">
           <span className="text-2xl">{icon}</span>
           <span className="badge badge-xs badge-warning absolute top-0 right-0 m-2.5">
-            Most Popular
+            {tag}
           </span>
           <div className="flex justify-between">
             <h2 className="text-2xl font-semibold">{name}</h2>
