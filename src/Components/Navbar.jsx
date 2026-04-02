@@ -188,12 +188,6 @@ const Navbar = ({ cartNumber, cart }) => {
                   <span className="text-info font-semibold">
                     Subtotal: ${total.toFixed(2)}
                   </span>
-
-                  <div className="card-actions mt-1">
-                    <button className="btn btn-primary btn-block btn-sm">
-                      View cart
-                    </button>
-                  </div>
                 </div>
               </div>
             </div>
