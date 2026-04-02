@@ -1,12 +1,23 @@
-import React from "react";
 import { MdDone } from "react-icons/md";
+import { toast } from "react-toastify";
 
-const Card = ({ card }) => {
-  const { name, description, features, price, icon, period, tag } = card;
+const Card = ({ card, cart, onAddToCart }) => {
+  const { id, name, description, features, price, icon, period, tag } = card;
+
+  // avoid duplicatee value of items
+  const isInCart = cart.some((item) => item.id === id);
+
+  const handleAddToCart = () => {
+    if (!isInCart) {
+      onAddToCart(card);
+      toast.success(`${name} added to cart.`);
+    }
+  };
+
   return (
     <div>
-      <div className="card bg-base-100 shadow-sm ">
-        <div className="card-body ">
+      <div className="card bg-base-100 shadow-sm relative">
+        <div className="card-body">
           <span className="text-2xl">{icon}</span>
 
           {tag === "Best Seller" ? (
@@ -26,10 +37,10 @@ const Card = ({ card }) => {
               {tag}
             </div>
           )}
-          <div className="flex justify-between">
-            <h2 className="text-2xl font-semibold">{name}</h2>
-          </div>
+
+          <h2 className="text-2xl font-semibold">{name}</h2>
           <p>{description}</p>
+
           <ul className="mt-6 flex flex-col gap-2 text-xs">
             <li>
               <span className="text-xl font-bold">${price}</span>
@@ -41,8 +52,15 @@ const Card = ({ card }) => {
               </li>
             ))}
           </ul>
+
           <div className="mt-6">
-            <button className="btn btn-primary btn-block">Buy Now</button>
+            <button
+              className="btn btn-primary btn-block"
+              onClick={handleAddToCart}
+              disabled={isInCart}
+            >
+              {isInCart ? "Added to Cart " : "Buy Now"}
+            </button>
           </div>
         </div>
       </div>
