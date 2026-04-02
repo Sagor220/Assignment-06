@@ -16,7 +16,6 @@ const fetchProducts = async () => {
 };
 
 const productsPromise = fetchProducts();
-console.log(productsPromise);
 function App() {
   return (
     <>
